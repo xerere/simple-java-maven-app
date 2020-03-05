@@ -11,7 +11,7 @@ public class App
     public App() {}
 
     public static void main(String[] args) {
-        //some comment to test git triggers3
+        //some comment to test git triggers344
         System.out.println(new App().getMessage());
     }
 
