@@ -6,7 +6,7 @@ pipeline {
 
             image 'maven:3-alpine'
 
-            args '-v /root/.m2:/root/.m2 /var/run/docker.sock:/var/run/docker.sock'
+            args '-v /root/.m2:/root/.m2'
 
         }
 
