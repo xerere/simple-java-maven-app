@@ -11,10 +11,14 @@ pipeline {
                 script {
                     // requires SonarQube Scanner 2.8+
                     scannerHome = tool 'SonarScanner 4.0';
-                }
+                }  
+
+                sh 'echo $HOSTNAME $scannerHome';          
+
                 withSonarQubeEnv('SonarQube Scanner') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
+                
             }
         }
         stage('Build') {
