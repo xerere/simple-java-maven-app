@@ -7,10 +7,11 @@ pipeline {
     }
     stages {
         stage('SonarQube analysis') {
+            agent none;
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
-                    scannerHome = tool 'SonarQube Scanner 2.11';
+                    scannerHome = tool 'SonarScanner 3.3';
                 }  
 
                 sh 'echo $HOSTNAME $scannerHome';          
