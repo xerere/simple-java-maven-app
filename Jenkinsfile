@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('SonarQube analysis') {
             agent any;
-            def scannerHome = tool 'SonarScanner 4.0';
+            // def scannerHome = tool 'SonarScanner 4.0';
             steps {
                 sh 'echo $HOSTNAME'; 
                 // withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
