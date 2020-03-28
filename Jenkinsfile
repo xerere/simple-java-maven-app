@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
-                    scannerHome = tool 'SonarScanner 2.11';
+                    scannerHome = tool 'SonarScanner 3.3';
                 }  
                 sh 'echo $HOSTNAME $scannerHome';          
                 withSonarQubeEnv('My SonarQube Server') {
