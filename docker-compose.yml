@@ -1,0 +1,25 @@
+version: '3.2'
+
+services:
+
+  emsa_blueocean:
+    image: 'jenkinsci/blueocean'
+    user: root
+    volumes:
+      - type: bind
+        source: '/var/run/docker.sock'
+        target: '/var/run/docker.sock'
+      - type: bind
+        source: 'C:\Users\emuser'
+        target: '/home'
+      - type: bind
+        source: 'jenkins-data'
+        target: '/var/jenkins_home'
+    ports:
+      - '8080:8080'
+
+  sonarqube: 
+    ports: 
+      - '9000:9000'
+    image: sonarqube
+    
