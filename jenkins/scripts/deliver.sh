@@ -25,7 +25,10 @@ echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 java -jar target/${NAME}-${VERSION}.jar
 
-wget -O /azcopy_v10.tar.gz http://aka.ms/downloadazcopy-v10-linux
+# https://github.com/google/cadvisor/issues/1131
+apk update && apk add ca-certificates && update-ca-certificates && apk add openssl
+
+wget -O /azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux
 
 tar -xf /azcopy_v10.tar.gz -C / --strip-components=1
 
