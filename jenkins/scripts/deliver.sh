@@ -28,9 +28,11 @@ java -jar target/${NAME}-${VERSION}.jar
 # https://github.com/google/cadvisor/issues/1131
 apk update && apk add ca-certificates && update-ca-certificates && apk add openssl
 
-wget -O /azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux
+#Download AzCopy
+wget -O azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux
 
-tar -xf azcopy_v10.tar.gz
+#Expand Archive
+tar -xvf downloadazcopy-v10-linux
 chmod 0755 install.sh
 ./install.sh
 
