@@ -37,4 +37,6 @@ tar -xvf azcopy_v10.tar.gz
 chmod 0755 azcopy_linux_amd64_10.3.4/azcopy
 # ./azcopy_linux_amd64_10.3.4/install.sh
 
+sleep 30
+
 ./azcopy_linux_amd64_10.3.4/azcopy target/${NAME}-${VERSION}.jar "https://eucise2020binaries.file.core.windows.net/drop?sv=2019-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2022-03-14T01:53:36Z&st=2020-03-13T17:53:36Z&spr=https&sig=wCMPA8FKqxL8FeS0Zo2gRpb61IwBZ%2FH%2BcequscvgJeE%3D"  --recursive=true
