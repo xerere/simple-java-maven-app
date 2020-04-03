@@ -45,10 +45,21 @@ java -jar target/${NAME}-${VERSION}.jar
 #chmod 0755 install.sh
 #./install.sh
 
-XXX=132
+XXX=130
 adminUsername=emuser
-remoteServer=10.40.$XXX.5
+adminPassword=em_@Dmin_0172
+remoteServer=10.40.$XXX.71
 
+apt-get install -y expect scp
+
+spawn ssh-copy-id adminUsername@$remoteServer; 
+match_max 100000; 
+expect "*Are you sure you want to continue connecting (yes/no)?"; 
+send -- "yes\r"; 
+expect -exact "\r Pasword: "; 
+send -- "$adminPassword\r"; 
+expect eof"'\
+        
 scp target $adminUsername@$remoteServer:/srv/drop/
 
 # azcopy target/${NAME}-${VERSION}.jar "https://eucise2020binaries.file.core.windows.net/drop?sv=2019-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2022-03-14T01:53:36Z&st=2020-03-13T17:53:36Z&spr=https&sig=wCMPA8FKqxL8FeS0Zo2gRpb61IwBZ%2FH%2BcequscvgJeE%3D"  --recursive=true
