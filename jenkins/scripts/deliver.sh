@@ -55,13 +55,15 @@ apk add openssh
 apk add expect
 
 
-# spawn ssh-copy-id adminUsername@$remoteServer; 
-# match_max 100000; 
-# expect "*Are you sure you want to continue connecting (yes/no)?"; 
-# send -- "yes\r"; 
-# expect -exact "\r Pasword: "; 
-# send -- "$adminPassword\r"; 
-# expect eof"'
+ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
+
+spawn ssh-copy-id adminUsername@$remoteServer; 
+match_max 100000; 
+expect "*Are you sure you want to continue connecting (yes/no)?"; 
+send -- "yes\r"; 
+expect -exact "\r Pasword: "; 
+send -- "$adminPassword\r"; 
+expect eof"";
         
 scp -r target $adminUsername@$remoteServer:/srv/drop/
 
