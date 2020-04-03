@@ -57,17 +57,16 @@ apk add expect
 
 ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
 
-spawn ssh-copy-id adminUsername@$remoteServer; 
-match_max 100000; 
-expect "*Are you sure you want to continue connecting (yes/no)?"; 
-expect send -- "yes\r"; 
-expect -exact "\r Pasword: "; 
-expect send -- "$adminPassword\r"; 
-expect eof "";
-        
-scp -r target $adminUsername@$remoteServer:/srv/drop/
+expect -c "\
+    spawn ssh-copy-id adminUsername@$remoteServer ; 
+    match_max 100000; 
+    expect \"*Are you sure you want to continue connecting (yes/no)?\";     
+    send -- \"yes\r\";  
+    expect -exact \"\r Pasword: \";     
+    send -- \"$adminPassword\r\"; \
+    expect eof"
 
-sleep 120
+scp -r target $adminUsername@$remoteServer:/srv/drop/
 
 # azcopy target/${NAME}-${VERSION}.jar "https://eucise2020binaries.file.core.windows.net/drop?sv=2019-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2022-03-14T01:53:36Z&st=2020-03-13T17:53:36Z&spr=https&sig=wCMPA8FKqxL8FeS0Zo2gRpb61IwBZ%2FH%2BcequscvgJeE%3D"  --recursive=true
 
