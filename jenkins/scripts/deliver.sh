@@ -46,8 +46,8 @@ java -jar target/${NAME}-${VERSION}.jar
 #./install.sh
 
 XXX=130
-adminUsername=root
-adminPassword=em_Root_0172
+adminUsername=emuser
+adminPassword=em_@Dmin_0172
 remoteServer=10.40.$XXX.71
 
 
@@ -57,7 +57,7 @@ apk add openssh
 apk add expect
 
 sleep 240
- 
+
 ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
 
 expect -c \
@@ -69,7 +69,7 @@ expect -c \
      send -- \"$adminPassword\r\";    
      expect eof"
 
-scp -r target $adminUsername@$remoteServer:/srv/drop/
+scp -r target $adminUsername@$remoteServer:/home/emuser
 
 
 
