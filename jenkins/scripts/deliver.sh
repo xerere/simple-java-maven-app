@@ -56,7 +56,7 @@ apk update
 apk add openssh
 apk add expect
 
-sleep 240
+# sleep 240
 
 ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
 
