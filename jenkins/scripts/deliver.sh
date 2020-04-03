@@ -51,7 +51,8 @@ adminPassword=em_@Dmin_0172
 remoteServer=10.40.$XXX.71
 
 apk update
-apk add expect scp
+apk add openssh-clients
+apk add expect
 
 spawn ssh-copy-id adminUsername@$remoteServer; 
 match_max 100000; 
