@@ -38,7 +38,7 @@ java -jar target/${NAME}-${VERSION}.jar
 # chmod 0755 azcopy_linux_amd64_10.3.4/azcopy
 # # ./azcopy_linux_amd64_10.3.4/install.sh
 
-# sleep 30
+ sleep 120
 
 #wget -O azcopy.tar.gz https://aka.ms/downloadazcopyprlinux
 #tar -xf azcopy.tar.gz
