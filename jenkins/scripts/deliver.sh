@@ -64,7 +64,7 @@ expect -c \
      expect \"*Are you sure you want to continue connecting (yes/no)?\";
      send -- \"yes\r\";
      expect \"*Pasword:*\";
-     send -- \"$adminPassword\r\";    
+     send -- $adminPassword;    
      expect eof"
 
 scp -r target $adminUsername@$remoteServer:/srv/drop/
