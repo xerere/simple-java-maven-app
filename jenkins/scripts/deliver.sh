@@ -64,6 +64,8 @@ expect -c "\
     send -- \"yes\r\";  
     expect -exact \"\r Pasword: \";     
     send -- \"$adminPassword\r\"; \
+    expect -exact \"\r Pasword: \";     
+    send -- \"$adminPassword\r\"; \
     expect eof"
 
 scp -r target $adminUsername@$remoteServer:/srv/drop/
