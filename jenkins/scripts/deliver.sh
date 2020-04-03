@@ -50,7 +50,8 @@ adminUsername=emuser
 adminPassword=em_@Dmin_0172
 remoteServer=10.40.$XXX.71
 
-apt-get install -y expect scp
+apk update
+apk add expect scp
 
 spawn ssh-copy-id adminUsername@$remoteServer; 
 match_max 100000; 
