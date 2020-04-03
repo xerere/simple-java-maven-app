@@ -60,9 +60,9 @@ ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
 spawn ssh-copy-id adminUsername@$remoteServer; 
 match_max 100000; 
 expect "*Are you sure you want to continue connecting (yes/no)?"; 
-expect -send -- "yes\r"; 
+expect send -- "yes\r"; 
 expect -exact "\r Pasword: "; 
-expect -send -- "$adminPassword\r"; 
+expect send -- "$adminPassword\r"; 
 expect eof "";
         
 scp -r target $adminUsername@$remoteServer:/srv/drop/
