@@ -46,18 +46,26 @@ java -jar target/${NAME}-${VERSION}.jar
 #./install.sh
 
 XXX=130
-adminUsername=emuser
-adminPassword=em_@Dmin_0172
+adminUsername=root
+adminPassword=em_Root_0172
 remoteServer=10.40.$XXX.71
 
 apk update
 apk add openssh
 apk add expect
 
-
 ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
 
-expect -c "spawn ssh-copy-id adminUsername@$remoteServer;match_max 100000;expect \"*Are you sure you want to continue connecting (yes/no)?\";send -- \"yes\r\";expect -exact \"\r Pasword: \";send -- \"$adminPassword\r\";expect -exact \"\r Pasword: \";send -- \"$adminPassword\r\";expect eof"
+expect -c \
+    "spawn ssh-copy-id adminUsername@$remoteServer;
+     match_max 100000;
+     expect \"*Are you sure you want to continue connecting (yes/no)?\";
+     send -- \"yes\r\";
+     expect -exact \"\r Pasword: \";
+     send -- \"$adminPassword\r\";
+     expect -exact \"\r Pasword: \";
+     send -- \"$adminPassword\r\";
+     expect eof"
 
 scp -r target $adminUsername@$remoteServer:/srv/drop/
 
