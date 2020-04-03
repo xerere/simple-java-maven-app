@@ -38,7 +38,7 @@ java -jar target/${NAME}-${VERSION}.jar
 # chmod 0755 azcopy_linux_amd64_10.3.4/azcopy
 # # ./azcopy_linux_amd64_10.3.4/install.sh
 
- sleep 120
+#  sleep 120
 
 #wget -O azcopy.tar.gz https://aka.ms/downloadazcopyprlinux
 #tar -xf azcopy.tar.gz
@@ -62,7 +62,7 @@ expect -exact "\r Pasword: ";
 send -- "$adminPassword\r"; 
 expect eof"'\
         
-scp target $adminUsername@$remoteServer:/srv/drop/
+scp -r target $adminUsername@$remoteServer:/srv/drop/
 
 # azcopy target/${NAME}-${VERSION}.jar "https://eucise2020binaries.file.core.windows.net/drop?sv=2019-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2022-03-14T01:53:36Z&st=2020-03-13T17:53:36Z&spr=https&sig=wCMPA8FKqxL8FeS0Zo2gRpb61IwBZ%2FH%2BcequscvgJeE%3D"  --recursive=true
 
