@@ -48,7 +48,10 @@ java -jar target/${NAME}-${VERSION}.jar
 XXX=118
 adminUsername=emuser
 adminPassword=em_@Dmin_0172
-remoteServer=10.40.$XXX.71
+# remoteServer=10.40.$XXX.71
+
+#remoteServer=repo-node118ms.westeurope.cloudapp.azure.com
+remoteServer=40.68.126.192
 
 
 
