@@ -45,7 +45,7 @@ java -jar target/${NAME}-${VERSION}.jar
 #chmod 0755 install.sh
 #./install.sh
 
-XXX=130
+XXX=118
 adminUsername=emuser
 adminPassword=em_@Dmin_0172
 remoteServer=10.40.$XXX.71
