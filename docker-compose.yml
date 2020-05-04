@@ -18,7 +18,7 @@ services:
     ports:
       - '8080:8080'
 
-  sonarqube: 
+  emsa_sonarqube: 
     ports: 
       - '9000:9000'
     image: sonarqube
