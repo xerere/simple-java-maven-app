@@ -16,6 +16,7 @@ pipeline {
         }
         stage('Run Sonar') {
              steps {
+                sh 'ping 172.19.0.2'
                 //sh 'mvn sonar:sonar -Dsonar.projectKey=myproject -Dsonar.host.url=http://10.40.130.72:9000 -Dsonar.login=390a085c7352cbe7509a309a83aad264a7280774'
                 sh 'mvn sonar:sonar \
                         -Dsonar.projectKey=MyProjectKey \
