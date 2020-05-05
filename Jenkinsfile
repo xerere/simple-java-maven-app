@@ -21,7 +21,7 @@ pipeline {
                 sh 'mvn sonar:sonar \
                         -Dsonar.projectKey=MyProjectKey \
                         -Dsonar.host.url=http://172.19.0.2:9000 \
-                        -Dsonar.login=de56f9d499813b8f027b30640d3fec3520cd07e3'
+                        -Dsonar.login=0c6e4b5db517e23fe0af23cb1789d625979639d0'
              }
         } 
         stage('Test') { 
