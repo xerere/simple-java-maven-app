@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'myagent'
-    }
+    agent any
     // agent {
     //     docker {
     //         image 'maven:3-alpine'
@@ -11,9 +9,7 @@ pipeline {
     stages {
         stage('SonarQube analysis')
          {
-            agent {
-                label 'myagent'
-            }
+            agent any
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
