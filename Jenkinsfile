@@ -9,7 +9,6 @@ pipeline {
     stages {
         stage('SonarQube analysis')
          {
-            agent any
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
