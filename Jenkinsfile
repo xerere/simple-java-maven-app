@@ -1,6 +1,6 @@
 pipeline {
     agent {
-            label 'myagent'
+        label 'myagent'
     }
     // agent {
     //     docker {
@@ -15,13 +15,13 @@ pipeline {
                 label 'myagent'
             }
             steps {
-                step {
-                    def scannerHome = tool 'SonarScanner 4.0';
-                    withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
-                        sh "${scannerHome}/bin/sonar-scanner"
-                    }
+                script {
+                    // requires SonarQube Scanner 2.8+
+                    scannerHome = tool 'SonarQube Scanner 3.3'
                 }
-
+                withSonarQubeEnv('SonarQube Scanner') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
     //     stage('Build') {
