@@ -13,3 +13,13 @@ The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
 you'll be creating yourself during the tutorial and the `scripts` subdirectory
 contains a shell script with commands that are executed when Jenkins processes
 the "Deliver" stage of your Pipeline.
+
+1. connect to devops machine (w10Devops)
+2. install docker desktop
+3. get jenkins bluocean
+4. get hello-word-maven
+5. configure jenkins to use hello world
+    - repository
+    - configurations
+6. configure sonarqube
+7. docker-compose up (docker-compose.yml)
