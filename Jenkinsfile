@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
-                    scannerHome = tool 'My SonarQube Server'
+                    scannerHome = tool 'SonarQube Scanner'
                 }
                 //withSonarQubeEnv('SonarQube Scanner') {
                     sh "${scannerHome}/bin/sonar-scanner"
