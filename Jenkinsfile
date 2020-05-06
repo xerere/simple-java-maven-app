@@ -42,7 +42,7 @@ pipeline {
                 sh 'mvn  sonar:sonar \
                         -Dsonar.projectKey=MyProjectKey2 \
                         -Dsonar.host.url=http://sonarqube:9000 \
-                        -Dsonar.login=c0db06e640bd00480aa63a06a86c6bd2c43e4f20'
+                        -Dsonar.login=d787adf8575cfd38ea8223fcbd03e9bcae6b932f'
              }
             // steps {
             //     script {
