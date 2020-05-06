@@ -9,7 +9,7 @@ pipeline {
 
     // agent any
 
-    // stages {
+    stages {
     //     stage('SonarQube analysis')
     //     {
     //         agent any
