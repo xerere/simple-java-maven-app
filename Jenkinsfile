@@ -1,13 +1,13 @@
 pipeline {
 
-    // agent {
-    //     docker {
-    //         image 'maven:3-alpine'
-    //         args '-v /root/.m2:/root/.m2 --add-host="sonarqube:172.19.0.2"'  
-    //     }
-    // }
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2 --add-host="sonarqube:172.19.0.2"'  
+        }
+    }
 
-    agent any
+    // agent any
 
     stages {
         // stage('SonarQube analysis')
