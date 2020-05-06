@@ -55,8 +55,7 @@ pipeline {
             //             -Dsonar.host.url=http://172.19.0.2:9000 \
             //             -Dsonar.login=d787adf8575cfd38ea8223fcbd03e9bcae6b932f"
             //     }
-               
-            }
+            // }
         } 
         // stage('Test') { 
         //     steps {
