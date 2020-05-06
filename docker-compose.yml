@@ -23,11 +23,11 @@ services:
     ports: 
       - '9000:9000'
 
-  emsa_maven:
-    image: 'maven:3-alpine'
-    command: bash -c "while true; do echo hello; sleep 2; done"
-    volumes:
-      - type: bind
-        source: '/root/.m2'
-        target: '/root/.m2'
+  # emsa_maven:
+  #   image: 'maven:3-alpine'
+  #   command: bash -c "while true; do echo hello; sleep 2; done"
+  #   volumes:
+  #     - type: bind
+  #       source: '/root/.m2'
+  #       target: '/root/.m2'
     
