@@ -7,12 +7,12 @@ pipeline {
     //     }
     // }
 
-    //agent 'emsa_maven'
+    agent 'emsa_maven'
 
     stages {
         stage('SonarQube analysis')
         {
-            agent {label 'myagent'}
+            
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
