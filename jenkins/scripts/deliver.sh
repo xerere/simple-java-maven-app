@@ -45,13 +45,13 @@ java -jar target/${NAME}-${VERSION}.jar
 #chmod 0755 install.sh
 #./install.sh
 
-XXX=118
+XXX=114
 adminUsername=emuser
 adminPassword=em_@Dmin_0172
-# remoteServer=10.40.$XXX.71
 
+remoteServer=10.40.$XXX.71 #repo-node$xx internal ip
 #remoteServer=repo-node118ms.westeurope.cloudapp.azure.com
-remoteServer=40.68.126.192
+#remoteServer=40.68.126.192
 
 
 
@@ -73,8 +73,6 @@ expect -c \
      expect eof"
 
 scp -r target $adminUsername@$remoteServer:/home/emuser
-
-
 
 # azcopy target/${NAME}-${VERSION}.jar "https://eucise2020binaries.file.core.windows.net/drop?sv=2019-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2022-03-14T01:53:36Z&st=2020-03-13T17:53:36Z&spr=https&sig=wCMPA8FKqxL8FeS0Zo2gRpb61IwBZ%2FH%2BcequscvgJeE%3D"  --recursive=true
 
