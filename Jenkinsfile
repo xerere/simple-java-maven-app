@@ -11,8 +11,7 @@ pipeline {
 
     stages {
         // stage('SonarQube analysis')
-        // {
-            
+        // {            
         //     steps {
         //         script {
         //             // requires SonarQube Scanner 2.8+
@@ -20,8 +19,7 @@ pipeline {
         //         }
         //         withSonarQubeEnv('SonarQube Server') {
         //             sh "${scannerHome}/bin/sonar-scanner"
-        //         }
-               
+        //         }               
         //     }
         // }
         stage('Build') {
@@ -41,7 +39,7 @@ pipeline {
                 //sh 'mvn sonar:sonar -Dsonar.projectKey=myproject -Dsonar.host.url=http://10.40.130.72:9000 -Dsonar.login=390a085c7352cbe7509a309a83aad264a7280774'
                 sh 'mvn  sonar:sonar \
                         -Dsonar.projectKey=MyProjectKey2 \
-                        -Dsonar.host.url=http://MyDevopsHost:9000 \
+                        -Dsonar.host.url=http://10.40.115.72:9000 \
                         -Dsonar.login=d787adf8575cfd38ea8223fcbd03e9bcae6b932f'
              }
             // steps {
