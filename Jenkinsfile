@@ -7,7 +7,7 @@ pipeline {
     //     }
     // }
 
-    agent 'emsa_maven'
+    agent any
 
     stages {
         stage('SonarQube analysis')
