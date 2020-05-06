@@ -6,10 +6,11 @@ pipeline {
     //         args '-v /root/.m2:/root/.m2'        
     //     }
     // }
-    
+
     stages {
         stage('SonarQube analysis')
         {
+            agent any
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
