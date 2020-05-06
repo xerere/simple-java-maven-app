@@ -1,11 +1,11 @@
 pipeline {
 
-    // agent {
-    //     docker {
-    //         image 'maven:3-alpine'
-    //         args '-v /root/.m2:/root/.m2 --add-host sonarqube:172.19.0.2'  
-    //     }
-    // }
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2 --add-host MyDevopsHost:10.40.115.72'  
+        }
+    }
 
     agent any
 
@@ -25,12 +25,12 @@ pipeline {
         //     }
         // }
         stage('Build') {
-            agent {
-                docker {
-                    image 'maven:3-alpine'
-                    args '-v /root/.m2:/root/.m2 --add-host sonarqube:10.40.115.72'  
-                }
-            }
+            // agent {
+            //     docker {
+            //         image 'maven:3-alpine'
+            //         args '-v /root/.m2:/root/.m2 --add-host MyDevopsHost:10.40.115.72'  
+            //     }
+            // }
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
@@ -41,7 +41,7 @@ pipeline {
                 //sh 'mvn sonar:sonar -Dsonar.projectKey=myproject -Dsonar.host.url=http://10.40.130.72:9000 -Dsonar.login=390a085c7352cbe7509a309a83aad264a7280774'
                 sh 'mvn  sonar:sonar \
                         -Dsonar.projectKey=MyProjectKey2 \
-                        -Dsonar.host.url=http://sonarqube:9000 \
+                        -Dsonar.host.url=http://MyDevopsHost:9000 \
                         -Dsonar.login=d787adf8575cfd38ea8223fcbd03e9bcae6b932f'
              }
             // steps {
