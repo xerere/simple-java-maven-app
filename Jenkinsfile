@@ -1,14 +1,22 @@
 pipeline {
     agent any
-    // agent {
-    //     docker {
-    //         image 'maven:3-alpine'
-    //         args '-v /root/.m2:/root/.m2'        
-    //     }
-    // }
+    agent {
+        label 'maven'
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'        
+        }
+    }
     stages {
+        stage('Build') {
+            agent 'maven'
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
         stage('SonarQube analysis')
          {
+            agent any
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
