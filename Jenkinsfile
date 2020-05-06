@@ -14,12 +14,10 @@ pipeline {
                 //     // requires SonarQube Scanner 2.8+
                 //     scannerHome = tool 'SonarQube Scanner 4.0'
                 // }
-                // withSonarQubeEnv('SonarQube Scanner') {
-                //     sh "${scannerHome}/bin/sonar-scanner"
-                // }
-                withSonarQubeEnv() {
+                //withSonarQubeEnv('SonarQube Scanner') {
                     sh "${scannerHome}/bin/sonar-scanner"
-                }
+                // }
+               
             }
         }
     //     stage('Build') {
