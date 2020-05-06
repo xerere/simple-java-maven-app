@@ -9,9 +9,11 @@ pipeline {
     }
     stages {
         stage('Build') {
-            agent 'maven'
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                agent 'maven'
+                step {
+                    sh 'mvn -B -DskipTests clean package'
+                }
             }
         }
         stage('SonarQube analysis')
